@@ -1,1 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Readings — Patrick</title>
+  <style>
+    :root { 
+      --bg: #FAF8F6; 
+      --fg: #111111; 
+      --muted: #555555; 
+      --maxw: 760px; 
+    }
+    body { 
+      margin: 0; 
+      background: var(--bg); 
+      color: var(--fg); 
+      font: 18px/1.7 ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; 
+      -webkit-font-smoothing: antialiased; 
+      padding: clamp(24px, 6vw, 64px); 
+    }
+    main { max-width: var(--maxw); margin: 0 auto; }
+    .back { text-decoration: none; color: var(--muted); font-size: 14px; margin-bottom: 24px; display: inline-block; }
+    h1 { font-size: clamp(28px, 5vw, 42px); margin-bottom: 48px; font-weight: normal; }
+    
+    /* Year Section Styling */
+    .year-block { margin-bottom: 64px; }
+    .year-label { 
+      font-size: 14px; 
+      color: var(--muted); 
+      text-transform: uppercase; 
+      letter-spacing: 2px; 
+      border-bottom: 1px solid rgba(0,0,0,0.1); 
+      padding-bottom: 8px; 
+      margin-bottom: 32px; 
+      display: block;
+    }
+    
+    .reading-entry { margin-bottom: 32px; }
+    .status-tag { 
+      font-size: 12px; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      color: var(--muted); 
+      display: block; 
+      margin-bottom: 4px;
+    }
+    .u { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    
+    footer { margin-top: 80px; font-size: 14px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <nav>
+      <a href="/index.html" class="back">← Back to Home</a>
+    </nav>
+    
+    <h1>Readings</h1>
 
+    <section class="year-block">
+      <span class="year-label">MMXXVI (2026)</span>
+      <p style="color: var(--muted); font-style: italic;">Year in progress.</p>
+    </section>
+
+    <section class="year-block">
+      <span class="year-label">MMXXV (2025)</span>
+      
+      <div class="reading-entry">
+        <span class="status-tag">Currently Reading</span>
+        <p>
+          <b>Roger E. Backhouse</b>, <i>The Penguin History of Economics</i> (2023): 
+          The history of economic thinking from the pre-socratic philosophers to the present day. 
+          A necessary refresher before tackling more specialized works.
+        </p>
+      </div>
+
+      <div class="reading-entry">
+        <span class="status-tag">Completed</span>
+        <p>
+          <b>Henry James</b>, <i>The American</i> (1887): Mr. Christopher Newman, an American businessman having made a small fortune, moves to Paris and resolves to find a wife. 
+          The novel's resolution pits Newman's good nature against his highest interest in a sea of aristocratic convention. 
+          High recommend to Americans in Europe.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> PJP
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = (function(y){
+      const map = [[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];
+      let res = ''; for (const [v, s] of map) { while (y >= v) { res += s; y -= v; } }
+      return res;
+    })(new Date().getFullYear());
+  </script>
+</body>
+</html>
