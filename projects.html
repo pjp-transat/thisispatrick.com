@@ -1,1 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Patrick</title>
+  <style>
+    :root { --bg: #FAF8F6; --fg: #111111; --muted: #555555; --maxw: 760px; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 18px/1.7 ui-serif, Georgia, serif; padding: clamp(24px, 6vw, 64px); }
+    main { max-width: var(--maxw); margin: 0 auto; }
+    .back { text-decoration: none; color: var(--muted); font-size: 14px; margin-bottom: 20px; display: block; }
+    h1 { font-size: 32px; margin-bottom: 20px; }
+    .project-card { border: 1px solid rgba(0,0,0,0.1); padding: 30px; margin-bottom: 40px; background: #fff; }
+    .tag { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+    h2 { margin: 10px 0; font-size: 24px; }
+    .links-row { margin-top: 20px; display: flex; gap: 20px; font-size: 14px; }
+    code { background: #f0f0f0; padding: 2px 5px; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <main>
+    <a href="/index.html" class="back">← Back to Home</a>
+    <h1>AI / BI Projects</h1>
+    <p style="color: var(--muted); margin-bottom: 48px;">A 6-week sprint exploring the fusion of Revenue Operations and LLMs.</p>
 
+    <article class="project-card">
+      <span class="tag">Week 01 — RevOps & Governance</span>
+      <h2>The AI-Powered Commission Auditor</h2>
+      <p>A resilient pipeline identifying revenue leakage in sales payouts. Developed using <code>Python</code>, <code>SQLite</code>, and <code>Gemini 2.0 Flash-Lite</code>.</p>
+      
+      <p><strong>The Operational Win:</strong> Implemented a fallback heuristic layer to maintain 100% audit uptime during regional API instability.</p>
+
+      <div class="links-row">
+        <a href="https://github.com/your-github/project1" target="_blank">View Code</a>
+        <a href="/patrick_revops_week1.db">Download SQL Database</a>
+      </div>
+    </article>
+
+    </main>
+</body>
+</html>
